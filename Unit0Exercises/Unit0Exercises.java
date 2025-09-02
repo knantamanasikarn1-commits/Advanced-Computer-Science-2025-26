@@ -12,12 +12,12 @@ public class Unit0Exercises {
         // sleepIn(false, true) -> true
 
         // testing diff21() method
-        System.out.println(obj.diff21(22)); // ouput: 2
+        System.out.println(obj.diff21(19)); // ouput: 2
         // diff21(10) -> 11
         // diff21(21) -> 0
 
         // testing flooringCalculator() method
-        System.out.println(obj.flooringCalculator(100, -1.5)); // output: 1250.0
+        System.out.println(obj.flooringCalculator(500, 2.5)); // output: 1250.0
         // flooringCalculator(0, 3.0) -> 0.0
         // flooringCalculator(100, -1.5) -> 0.0
 
