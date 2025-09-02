@@ -2,6 +2,8 @@ public class BulletinBoard {
 
     // class def only has info about it
 
+    // instance variables
+    
     private String text;
     private int numPosters;
     private String color;
@@ -9,7 +11,9 @@ public class BulletinBoard {
     private boolean hasSpaceLeft;
 
     public BulletinBoard() {
-        // constructor, name matches class
+
+        // constructor: instruction for making instance of class, name matches class
+
         text = "COME FOR MATH HELP";
         numPosters = 1;
         color = "tan";
@@ -17,9 +21,18 @@ public class BulletinBoard {
         hasSpaceLeft = true;
     }
 
-    // pinPoster, removePoster, changeText
-    
+    // methods: pinPoster, removePoster, changeText (identifiers are listed)
+    // can put in parameters for methods in () like those in pinPoster()
+    // private methods are usually used by public methods
+    // method header/signature: public void pinPoster()
+        //  modifier, thing returned, identifier, ()
+    // void as a "thing returned" means that nothing is being returned, it's just changing variables
+        // print is not returning
+
     public void pinPoster() {
+
+        // method body
+
         if (hasSpaceLeft) {
             numPosters += 1;
             System.out.println("You have pinned a new poster on the board. There are now a total of " + numPosters + " posters.");
@@ -41,9 +54,9 @@ public class BulletinBoard {
         return;
     }
 
-    public void changeText() {
-        text = "MATH FINALS COMING SOON";
-        System.out.println("You have changed the board's text.");
+    public void changeText(String newText) {
+        text = newText;
+        System.out.println("You have changed the board's text. It now reads: " + text + ".");
         return;
     }
 
@@ -51,6 +64,16 @@ public class BulletinBoard {
         hasSpaceLeft = true;
         System.out.println("You have moved a poster on the board, creating space.");
         return;
+    }
+
+    public void replaceFabric(String newFabricColor) {
+        color = newFabricColor;
+        System.out.println("You have changed the board's fabric. It is now " + color + ".");
+    }
+
+    public void moveBoard(String newLocation) {
+        location = newLocation;
+        System.out.println("You have moved the board to " + location + ".");
     }
 
 }

@@ -6,7 +6,7 @@ public class BulletinBoardRunner {
         System.out.println("Hey.");
 
         BulletinBoard bulletinBoard1 = new BulletinBoard();
-        bulletinBoard1.changeText();
+        bulletinBoard1.changeText("HELLO");
         bulletinBoard1.pinPoster();
         bulletinBoard1.removePoster();
     }
