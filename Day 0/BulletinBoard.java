@@ -76,4 +76,22 @@ public class BulletinBoard {
         System.out.println("You have moved the board to " + location + ".");
     }
 
+    public String toString() {
+        return "This is a " + color + " bulletin board that says \"" + text + 
+        "\", located at " + location + " and containing " + numPosters + " poster(s).";
+    }
+
+    public boolean equals(BulletinBoard anotherBulletinBoard) {
+        if (
+            this.text.equals(anotherBulletinBoard.text) &&
+            this.numPosters == anotherBulletinBoard.numPosters &&
+            this.color.equals(anotherBulletinBoard.color) &&
+            this.location.equals(anotherBulletinBoard.location) &&
+            this.hasSpaceLeft == anotherBulletinBoard.hasSpaceLeft
+        ) {
+            return true;
+        }
+        return false;
+    }
+
 }

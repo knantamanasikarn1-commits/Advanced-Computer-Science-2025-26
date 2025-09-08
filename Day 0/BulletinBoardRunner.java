@@ -9,6 +9,12 @@ public class BulletinBoardRunner {
         bulletinBoard1.changeText("HELLO");
         bulletinBoard1.pinPoster();
         bulletinBoard1.removePoster();
+
+        System.out.println(bulletinBoard1.toString());
+
+        BulletinBoard bulletinBoard2 = new BulletinBoard();
+        System.out.print("Are the two bulletin boards equal?: ");
+        System.out.println(bulletinBoard1.equals(bulletinBoard2));
     }
 
 }
