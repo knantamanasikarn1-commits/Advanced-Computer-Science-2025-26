@@ -40,7 +40,7 @@ public class Rectangle {
     // Methods
 
     public String toString() {
-        return "This rectangle has a length of " + length + " and a width of " + width + ". It's area is " + calculateArea() + ".";
+        return "This rectangle has a length of " + length + " and a width of " + width + ". It's area is " + getArea() + ".";
     }
 
     public boolean equals(Rectangle other) {
@@ -50,15 +50,15 @@ public class Rectangle {
         return false;
     }
 
-    public int calculateArea() {
+    public int getArea() {
         return length * width;
     }
 
-    public int calculatePerimeter() {
+    public int getPerimeter() {
         return 2 * (length + width);
     }
 
-    public double calculateDiagonal() {
+    public double getDiagonal() {
         return Math.sqrt(length ^ 2 + width ^ 2);
     }
 

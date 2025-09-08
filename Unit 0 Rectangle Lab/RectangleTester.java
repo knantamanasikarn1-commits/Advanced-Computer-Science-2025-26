@@ -9,7 +9,7 @@ public class RectangleTester {
 
         rect1.setLength(9);
         rect2.setWidth(12);
-        
+
         System.out.println(rect1.toString());
         System.out.println(rect2.toString());
 
@@ -19,7 +19,7 @@ public class RectangleTester {
             System.out.println("The rectangles are not equal / different.");
         }
 
-        System.out.println("rect1's diagonal: " + rect1.calculateDiagonal());
-        System.out.println("rect2's diagonal: " + rect2.calculateDiagonal());
+        System.out.println("rect1's diagonal: " + rect1.getDiagonal());
+        System.out.println("rect2's diagonal: " + rect2.getDiagonal());
     }
 }
