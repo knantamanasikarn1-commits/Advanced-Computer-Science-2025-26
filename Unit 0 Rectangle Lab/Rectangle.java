@@ -40,8 +40,8 @@ public class Rectangle {
     // Methods
 
     public String toString() {
-        return "This rectangle has a length of " + length + " and a width of " + 
-        width + ". It's area is " + getArea() + ".";
+        return "This rectangle has a length of " + length + " and a width of "
+            + width + ". It's area is " + getArea() + ".";
     }
 
     public boolean equals(Rectangle other) {
