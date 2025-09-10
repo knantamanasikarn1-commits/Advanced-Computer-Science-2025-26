@@ -3,6 +3,11 @@ public class RectangleTester {
 
         Rectangle rect1 = new Rectangle(5, 12);
         Rectangle rect2 = new Rectangle(9, 16);
+        
+        System.out.println(rect1.verticiesToDesmos());
+        int[] point = {1, 0};
+        rect1.rotateNicely(point, 3);
+        System.out.println(rect1.verticiesToDesmos());
 
         System.out.println(rect1.toString());
         System.out.println(rect2.toString());
@@ -21,8 +26,5 @@ public class RectangleTester {
 
         System.out.println("rect1's diagonal: " + rect1.getDiagonal());
         System.out.println("rect2's diagonal: " + rect2.getDiagonal());
-
-        int[] point = {1, 2};
-        rect1.rotateNicely(point, 1);
     }
 }

@@ -1,5 +1,3 @@
-import java.sql.Array;
-
 public class Rectangle {
 
     // Instance variables
@@ -81,13 +79,48 @@ public class Rectangle {
     }
 
     public void rotateNicely(int[] originOfRot, int num90DegTurns) {
-        for (int i = 0; i < num90DegTurns; i++) {
-            System.out.println(i);
+        int[][] movedVertices = vertices;
+        for (int[] vertex : movedVertices) {
+            vertex[0] -= originOfRot[0];
+            vertex[1] -= originOfRot[1];
         }
+        for (int i = 0; i < num90DegTurns; i++) {
+            for (int[] vertex : movedVertices) {
+                int[] newVertex = new int[] {vertex[1], -1 * vertex[0]};
+                vertex[0] = newVertex[0];
+                vertex[1] = newVertex[1];
+            }
+        }
+        for (int[] vertex : movedVertices) {
+            vertex[0] += originOfRot[0];
+            vertex[1] += originOfRot[1];
+        }
+        vertices = movedVertices;
     }
 
     public void rotateNotNicely(double[] originofRot, double degrees) {
         
+    }
+
+    public String verticiesToString() {
+        String returnedString = "";
+        for (int[] point : vertices) {
+            returnedString += ("(" + point[0] + ", " + point[1] + ") ");
+        }
+        return returnedString;
+    }
+
+    public String verticiesToDesmos() {
+        String returnedString = "polygon(";
+        for (int i = 0; i < 4; i++) {
+            returnedString += ("(" + vertices[i][0] + ", " + vertices[i][1] + ")");
+            if (i != 3) {
+                returnedString += ", ";
+            } else {
+                returnedString += ")";
+            }
+        }
+        return returnedString;
     }
 
 }
