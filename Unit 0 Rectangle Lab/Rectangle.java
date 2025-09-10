@@ -1,20 +1,33 @@
+import java.sql.Array;
+
 public class Rectangle {
 
     // Instance variables
 
     private int length;
     private int width;
+    private int[][] vertices;
 
     // Constructors
+
+    public Rectangle(int startX, int startY, int newLength, int newWidth) {
+        this.length = newLength;
+        this.width = newWidth;
+        this.vertices = new int[][] {
+            {startX, startY}, {startX + width, startY}, 
+            {startX + width, startY + length}, {startX, startY + length}};
+    }
 
     public Rectangle(int newLength, int newWidth) {
         this.length = newLength;
         this.width = newWidth;
+        this.vertices = new int[][] {{0, 0}, {width, 0}, {width, length}, {0, length}};
     }
 
     public Rectangle() {
         this.length = 3;
         this.width = 4;
+        this.vertices = new int[][] {{0, 0}, {width, 0}, {width, length}, {0, length}};
     }
 
     // Getters
@@ -25,6 +38,10 @@ public class Rectangle {
 
     public int getWidth() {
         return width;
+    }
+
+    public int[][] getVertices() {
+        return vertices;
     }
 
     // Setters
@@ -61,6 +78,16 @@ public class Rectangle {
 
     public double getDiagonal() {
         return Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
+    }
+
+    public void rotateNicely(int[] originOfRot, int num90DegTurns) {
+        for (int i = 0; i < num90DegTurns; i++) {
+            System.out.println(i);
+        }
+    }
+
+    public void rotateNotNicely(double[] originofRot, double degrees) {
+        
     }
 
 }

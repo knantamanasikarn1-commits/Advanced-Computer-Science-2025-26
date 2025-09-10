@@ -21,5 +21,8 @@ public class RectangleTester {
 
         System.out.println("rect1's diagonal: " + rect1.getDiagonal());
         System.out.println("rect2's diagonal: " + rect2.getDiagonal());
+
+        int[] point = {1, 2};
+        rect1.rotateNicely(point, 1);
     }
 }

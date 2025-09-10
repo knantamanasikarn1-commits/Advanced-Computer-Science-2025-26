@@ -94,4 +94,44 @@ public class BulletinBoard {
         return false;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public int getNumPosters() {
+        return numPosters;
+    }
+
+    public void setNumPosters(int numPosters) {
+        this.numPosters = numPosters;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public boolean getHasSpaceLeft() {
+        return hasSpaceLeft;
+    }
+
+    public void setSpaceLeft(boolean hasSpaceLeft) {
+        this.hasSpaceLeft = hasSpaceLeft;
+    }
+
 }
