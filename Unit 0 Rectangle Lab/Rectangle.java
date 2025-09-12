@@ -115,10 +115,19 @@ public class Rectangle {
         rotationDegrees = (rotationDegrees + 90 * num90DegTurns) % 360;
     }
 
-    public void rotateNotNicely(double[] originOfRot, double degrees) {
+    public void rotate(double[] originOfRot, double degrees) {
         rotationDegrees = (rotationDegrees + degrees) % 360;
-        double radians = 2 * Math.PI - degrees * Math.PI / 180;
-        for (double[] vertex : vertices) {
+        double radians = Math.toRadians(360 - rotationDegrees);
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 2; j++) {
+                currentVertices[i][j] = originalVertices[i][j];
+            }
+        }
+        if (rotationDegrees % 90 == 0) {
+            rotateNicely(originOfRot, (int) degrees / 90);
+            return;
+        }
+        for (double[] vertex : currentVertices) {
 
             // Translation
 
@@ -142,7 +151,7 @@ public class Rectangle {
 
     public String verticiesToString() {
         String returnedString = "";
-        for (double[] point : vertices) {
+        for (double[] point : currentVertices) {
             returnedString += ("(" + point[0] + ", " + point[1] + ") ");
         }
         return returnedString;
@@ -151,7 +160,7 @@ public class Rectangle {
     public String verticiesToDesmos() {
         String returnedString = "polygon(";
         for (int i = 0; i < 4; i++) {
-            returnedString += ("(" + vertices[i][0] + ", " + vertices[i][1] + ")");
+            returnedString += ("(" + currentVertices[i][0] + ", " + currentVertices[i][1] + ")");
             if (i != 3) {
                 returnedString += ", ";
             } else {

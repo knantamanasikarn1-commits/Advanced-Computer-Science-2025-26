@@ -6,10 +6,10 @@ public class RectangleTester {
         
         System.out.println(rect1.verticiesToDesmos());
         double[] point = {1, 0};
-        rect1.rotateNicely(point, 3);
+        rect1.rotate(point, 90);
         System.out.println(rect1.verticiesToDesmos());
 
-        rect1.rotateNotNicely(point, 90);
+        rect1.rotate(point, 270);
         System.out.println(rect1.verticiesToDesmos());
 
         System.out.println(rect1.toString());
