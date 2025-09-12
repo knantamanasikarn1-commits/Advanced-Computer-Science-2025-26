@@ -5,8 +5,11 @@ public class RectangleTester {
         Rectangle rect2 = new Rectangle(9, 16);
         
         System.out.println(rect1.verticiesToDesmos());
-        int[] point = {1, 0};
+        double[] point = {1, 0};
         rect1.rotateNicely(point, 3);
+        System.out.println(rect1.verticiesToDesmos());
+
+        rect1.rotateNotNicely(point, 90);
         System.out.println(rect1.verticiesToDesmos());
 
         System.out.println(rect1.toString());
