@@ -98,19 +98,25 @@ public class Rectangle {
 
     public void rotateNicely(double[] originOfRot, int num90DegTurns) {
         for (double[] vertex : currentVertices) {
+
+            // Translation
+
             vertex[0] -= originOfRot[0];
             vertex[1] -= originOfRot[1];
-        }
-        for (double i = 0; i < num90DegTurns; i++) {
-            for (double[] vertex : currentVertices) {
+
+            // Rotation
+
+            for (double i = 0; i < num90DegTurns; i++) {
                 double[] newVertex = {vertex[1], -1 * vertex[0]};
                 vertex[0] = newVertex[0];
                 vertex[1] = newVertex[1];
             }
-        }
-        for (double[] vertex : currentVertices) {
+
+            // Translation
+
             vertex[0] += originOfRot[0];
             vertex[1] += originOfRot[1];
+
         }
         rotationDegrees = (rotationDegrees + 90 * num90DegTurns) % 360;
     }
