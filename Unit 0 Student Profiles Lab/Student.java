@@ -70,9 +70,7 @@ public class Student {
 
     public String generateId() {
         String returnedString = "";
-        for (int i = 0; i < 3; i++) {
-            returnedString += (int) (Math.random() * 9 + 1);
-        }
+        returnedString += (int) (Math.random() * 800 + 100);
         returnedString += "-";
         for (int i = 0; i < 4; i++) {
             returnedString += (int) (Math.random() * 10);
