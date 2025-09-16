@@ -30,11 +30,13 @@ public class Student {
     public Student(String name, int grade) {
         this.name = name;
         this.grade = grade;
+        this.id = generateId();
     }
 
     public Student(String name) {
         this.name = name;
         this.grade = 10;
+        this.id = generateId();
     }
 
     public String toString() {
