@@ -1,10 +1,6 @@
 public class TotalItUp {
     private int numOne, numTwo, answer;
 
-    public TotalItUp() {
-        
-    }
-
     public void setNums(int n1, int n2) {
         this.numOne = n1;
         this.numTwo = n2;

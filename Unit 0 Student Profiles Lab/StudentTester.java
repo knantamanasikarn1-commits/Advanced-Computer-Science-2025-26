@@ -5,8 +5,8 @@ public class StudentTester {
 
         Student student1 = new Student("Kai", 10);
         Student student2 = new Student("Ken", 8);
-        Student student3 = new Student("Kai");
-        Student student4 = new Student("Ken");
+        Student student3 = new Student("Joshua");
+        Student student4 = new Student("Alex");
 
         // To string for all students
 
@@ -31,5 +31,12 @@ public class StudentTester {
 
         System.out.println("Are student1 and student3 the same?: " + student1.equals(student3));
         System.out.println("Are student2 and student4 the same?: " + student2.equals(student4));
+
+        // Vibecheck testing
+
+        student1.setLatestOpp(student2);
+        student3.setLatestOpp(student2);
+        System.out.println(student1.vibeCheck(student3));
+
     }
 }

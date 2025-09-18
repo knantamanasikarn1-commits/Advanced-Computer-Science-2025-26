@@ -2,6 +2,24 @@ public class Student {
     private String name;
     private String id;
     private int grade;
+    private Student latestOpp;
+    private Student recentFriend;
+
+    public Student getLatestOpp() {
+        return latestOpp;
+    }
+
+    public void setLatestOpp(Student latestOpp) {
+        this.latestOpp = latestOpp;
+    }
+
+    public Student getRecentFriend() {
+        return recentFriend;
+    }
+
+    public void setRecentFriend(Student recentFriend) {
+        this.recentFriend = recentFriend;
+    }
 
     public String getName() {
         return name;
@@ -41,7 +59,13 @@ public class Student {
 
     public String toString() {
         String returnedString = "";
-        returnedString += name + " is a " + grade;
+        returnedString += name + " is ";
+        if (grade == 8 || grade == 11) {
+            returnedString += "an ";
+        } else {
+            returnedString += "a ";
+        }
+        returnedString += grade;
         if (grade == 1) {
             returnedString += "st";
         } else if (grade == 2) {
@@ -79,6 +103,17 @@ public class Student {
             returnedString += (int) (Math.random() * 10);
         }
         return returnedString;
+    }
+
+    public String vibeCheck(Student other) {
+        if (this.latestOpp.equals(other.latestOpp)) {
+            recentFriend = other;
+            other.recentFriend = this;
+            return this.name + " and " + other.name + " are now friends! " + 
+                "They both dislike " + this.latestOpp.name + ".";
+        }
+        return this.name + " dislikes " + this.latestOpp.name + ", but " + other.name +
+            "dislikes " + other.latestOpp.name + ".";
     }
 
 }
