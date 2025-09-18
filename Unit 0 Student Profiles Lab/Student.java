@@ -94,10 +94,10 @@ public class Student {
 
     public String generateId() {
         String returnedString = "";
-        for (int i = 0; i < 3; i++) {
-            returnedString += (int) (Math.random() * 10);
-        }
-        // returnedString += (int) (Math.random() * 800 + 100);
+        // for (int i = 0; i < 3; i++) {
+        //     returnedString += (int) (Math.random() * 10);
+        // }
+        returnedString += (int) (Math.random() * 900 + 100);
         returnedString += "-";
         for (int i = 0; i < 4; i++) {
             returnedString += (int) (Math.random() * 10);
@@ -109,11 +109,11 @@ public class Student {
         if (this.latestOpp.equals(other.latestOpp)) {
             recentFriend = other;
             other.recentFriend = this;
-            return this.name + " and " + other.name + " are now friends! " + 
-                "They both dislike " + this.latestOpp.name + ".";
+            return this.name + " and " + other.name + " are now friends! "
+                + "They both dislike " + this.latestOpp.name + ".";
         }
-        return this.name + " dislikes " + this.latestOpp.name + ", but " + other.name +
-            "dislikes " + other.latestOpp.name + ".";
+        return this.name + " dislikes " + this.latestOpp.name + ", but " + other.name
+            + "dislikes " + other.latestOpp.name + ".";
     }
 
 }
