@@ -97,7 +97,7 @@ public class Student {
         // for (int i = 0; i < 3; i++) {
         //     returnedString += (int) (Math.random() * 10);
         // }
-        returnedString += (int) (Math.random() * 900 + 100);
+        returnedString += (int) (Math.random() * 800 + 100);
         returnedString += "-";
         for (int i = 0; i < 4; i++) {
             returnedString += (int) (Math.random() * 10);
