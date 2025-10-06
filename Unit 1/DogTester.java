@@ -26,19 +26,19 @@ public class DogTester {
 
         }
 
-        // Testing generateDogChar() w/ Yamper (dogId 123)
-        System.out.println("ID 123 char: " + dog1.generateDogChar());
-        System.out.println();
+        // // Testing generateDogChar() w/ Yamper (dogId 123)
+        // System.out.println("ID 123 char: " + dog1.generateDogChar());
+        // System.out.println();
 
-        // Testing generateDogChar() w/ Growlithe (dogId 693)
-        System.out.println("ID 693 char: " + dog3.generateDogChar());
-        System.out.println();
+        // // Testing generateDogChar() w/ Growlithe (dogId 693)
+        // System.out.println("ID 693 char: " + dog3.generateDogChar());
+        // System.out.println();
 
-        // Testing generateDogTag()
-        System.out.println(dog1.generateDogTag());
-        System.out.println(dog2.generateDogTag());
-        System.out.println(dog3.generateDogTag());
-        System.out.println();
+        // // Testing generateDogTag()
+        // System.out.println(dog1.generateDogTag());
+        // System.out.println(dog2.generateDogTag());
+        // System.out.println(dog3.generateDogTag());
+        // System.out.println();
 
         // Testing toString()
         System.out.println(dog1);
