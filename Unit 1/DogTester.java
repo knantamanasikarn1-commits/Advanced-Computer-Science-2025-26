@@ -55,6 +55,26 @@ public class DogTester {
         // Testing stillInFacility
         dog1.setStillInFacility(false);
         System.out.println(dog1);
+        System.out.println();
+
+        // Testing static generateDogChar() method
+        System.out.println(Dog.generateDogChar(123)); // should return 'L'
+        System.out.println(Dog.generateDogChar(100)); // should return 'G'
+        System.out.println(Dog.generateDogChar(693)); // should return 'N'
+        System.out.println();
+
+        // Testing static pickup() method
+        Dog dog4 = new Dog("Fidough", "Kai", 4, 500);
+        System.out.println(Dog.pickup(dog4, "Ken"));
+        System.out.println(Dog.pickup(dog4, "Kai"));
+        System.out.println(dog4.isStillInFacility());
+        System.out.println();
+
+        // Testing static checkIn() method
+        System.out.println("Is dog1 still in facility?: " + dog1.isStillInFacility());
+        Dog.checkIn(dog1, "NewOwner");
+        System.out.println("Is dog1 still in facility?: " + dog1.isStillInFacility());
+        System.out.println(dog1.getOwnerName());
 
     }
 

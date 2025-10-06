@@ -120,9 +120,9 @@ public class Dog {
     public static String pickup(Dog dog, String personName) {
         if (personName.equals(dog.ownerName)) {
             dog.stillInFacility = false;
-            return dog.name + " has been picked up by their owner" + personName + "."
+            return dog.name + " has been picked up by their owner" + personName + ".";
         }
-        return personName + " cannot pick up " + dog.name + " because they are not " + dog.name + "'s owner."
+        return personName + " cannot pick up " + dog.name + " because they are not " + dog.name + "'s owner.";
     }
 
     public static void checkIn(Dog dog, String personName) {
