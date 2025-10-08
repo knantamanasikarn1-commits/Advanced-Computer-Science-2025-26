@@ -14,7 +14,7 @@ public class PawesomeUtils {
     }
 
     public static String generateDogTag(int dogId, char dogChar) {
-        String returnedString = dogId + dogChar + "";
+        String returnedString = "" + dogId + dogChar;
         return returnedString;
     }
 
@@ -36,7 +36,7 @@ public class PawesomeUtils {
     public static boolean validateDogTag(Dog dog) {
         int validatedDogId = validateDogId(dog.getDogId());
         char newChar = generateDogChar(validatedDogId);
-        String newDogTag = validatedDogId + newChar + "";
+        String newDogTag = "" + validatedDogId + newChar;
         return (newDogTag.equals(dog.getDogTag()));
     }
 
