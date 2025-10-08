@@ -58,23 +58,42 @@ public class DogTester {
         System.out.println();
 
         // Testing static generateDogChar() method
-        System.out.println(Dog.generateDogChar(123)); // should return 'L'
-        System.out.println(Dog.generateDogChar(100)); // should return 'G'
-        System.out.println(Dog.generateDogChar(693)); // should return 'N'
+        System.out.println(PawesomeUtils.generateDogChar(123)); // should return 'L'
+        System.out.println(PawesomeUtils.generateDogChar(100)); // should return 'G'
+        System.out.println(PawesomeUtils.generateDogChar(693)); // should return 'N'
         System.out.println();
 
         // Testing static pickup() method
         Dog dog4 = new Dog("Fidough", "Kai", 4, 500);
-        System.out.println(Dog.pickup(dog4, "Ken"));
-        System.out.println(Dog.pickup(dog4, "Kai"));
+        System.out.println(PawesomeUtils.pickup(dog4, "Ken"));
+        System.out.println(PawesomeUtils.pickup(dog4, "Kai"));
         System.out.println(dog4.isStillInFacility());
         System.out.println();
 
         // Testing static checkIn() method
         System.out.println("Is dog1 still in facility?: " + dog1.isStillInFacility());
-        Dog.checkIn(dog1, "NewOwner");
+        PawesomeUtils.checkIn(dog1, "NewOwner");
         System.out.println("Is dog1 still in facility?: " + dog1.isStillInFacility());
         System.out.println(dog1.getOwnerName());
+        System.out.println();
+
+        // Test validateDogId() method
+        Dog invalidIdDog = new Dog("Bug", "Death", 666, 9999);
+        Dog validIdDog = new Dog("Goodest Boy", "Good Guy", 7, 111);
+        System.out.println(PawesomeUtils.validateDogId(invalidIdDog.getDogId())); // gets random
+        System.out.println(PawesomeUtils.validateDogId(validIdDog.getDogId())); // still 111
+        System.out.println();
+
+        // Test validateDogTag() method
+        Dog dogA = new Dog("Another One", "I dunno", 12, 130);
+        System.out.println(PawesomeUtils.validateDogTag(dogA));
+        System.out.println(PawesomeUtils.validateDogTag(invalidIdDog));
+        System.out.println(PawesomeUtils.validateDogTag(validIdDog));
+        System.out.println();
+
+        // Test edge cases of validateDogTag()
+        validIdDog.setDogId(1000);
+        System.out.println(PawesomeUtils.validateDogTag(validIdDog));
 
     }
 
