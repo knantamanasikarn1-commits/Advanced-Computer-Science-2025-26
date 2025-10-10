@@ -91,9 +91,26 @@ public class DogTester {
         System.out.println(PawesomeUtils.validateDogTag(validIdDog));
         System.out.println();
 
-        // Test edge cases of validateDogTag()
-        validIdDog.setDogId(1000);
+        // Test edge cases of validateDogTag(), then counterfeit dog checkIn()
+        validIdDog.setDogId(1000); // makes invalid ID
         System.out.println(PawesomeUtils.validateDogTag(validIdDog));
+        PawesomeUtils.checkIn(validIdDog, "Good Guy");
+        System.out.println();
+
+        // Test convertAgeToHumanAge() method
+        Dog dogB = new Dog("DoggyB", "Jeff", 1, 333);
+        System.out.println(PawesomeUtils.convertAgeToHumanAge(dogB)); // 15
+        Dog dogC = new Dog("DoggyC", "Jeff", 2, 333);
+        System.out.println(PawesomeUtils.convertAgeToHumanAge(dogC)); // 24
+        Dog dogD = new Dog("DoggyD", "Jeff", 5, 333);
+        System.out.println(PawesomeUtils.convertAgeToHumanAge(dogD)); // 39
+        System.out.println();
+
+        // Test convertAgeToDogYears() method
+        System.out.println(PawesomeUtils.convertAgeToDogYears(15)); // 1
+        System.out.println(PawesomeUtils.convertAgeToDogYears(24)); // 2
+        System.out.println(PawesomeUtils.convertAgeToDogYears(39)); // 5
+
 
     }
 

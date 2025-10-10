@@ -9,8 +9,13 @@ public class PawesomeUtils {
     }
 
     public static void checkIn(Dog dog, String personName) {
-        dog.setStillInFacility(true);
-        dog.setOwnerName(personName);
+        if (validateDogTag(dog)) {
+            dog.setStillInFacility(true);
+            dog.setOwnerName(personName);
+            System.out.println(dog.getName() + " was successfully checked in.");
+        } else {
+            System.out.println(dog.getName() + " was not checked in because of an invalid tag.");
+        }
     }
 
     public static String generateDogTag(int dogId, char dogChar) {
@@ -38,6 +43,30 @@ public class PawesomeUtils {
         char newChar = generateDogChar(validatedDogId);
         String newDogTag = "" + validatedDogId + newChar;
         return (newDogTag.equals(dog.getDogTag()));
+    }
+
+    public static int convertAgeToHumanAge(Dog dog) {
+        int dogAge = dog.getAge();
+        int humanAge = 0;
+        if (dogAge == 1) {
+            humanAge = 15;
+        } else if (dogAge >= 2) {
+            humanAge = 24;
+            humanAge += (dogAge - 2) * 5;
+        }
+        return humanAge;
+    }
+
+    public static int convertAgeToDogYears(int humanYears) {
+        int dogAge = 0;
+        if (humanYears <= 15) {
+            dogAge = 1;
+        } else if (15 < humanYears && humanYears <= 24) {
+            dogAge = 2;
+        } else if (humanYears > 24) {
+            dogAge = (humanYears - 24) / 5 + 2;
+        }
+        return dogAge;
     }
 
 }
