@@ -56,7 +56,7 @@ public class Dog {
     }
 
     public void setDogId(int dogId) {
-        this.dogId = dogId;
+        this.dogId = PawesomeUtils.validateDogId(dogId);
     }
 
     public char getDogChar() {
@@ -88,20 +88,20 @@ public class Dog {
         if (!stillInFacility) {
             stillInFacilityText = "not ";
         }
-        String returnedString = name + " is a good dog. They are " + age + " years old and belong to "  + ownerName + ". " + 
-                                "They are " + stillInFacilityText + "currently in our facility. " + 
-                                "For employee use only: DogTag is " + dogTag + ".";
+        String returnedString = name + " is a good dog. They are " + age + " years old and belong to "  + ownerName + ". "
+                                + "They are " + stillInFacilityText + "currently in our facility. "
+                                + "For employee use only: DogTag is " + dogTag + ".";
         return returnedString;
     }
 
     public boolean equals(Dog other) {
-        return (this.name.equals(other.name) &&
-                this.ownerName.equals(other.ownerName) &&
-                this.age == other.age &&
-                this.dogId == other.dogId &&
-                this.dogChar == other.dogChar && 
-                this.dogTag.equals(other.dogTag) &&
-                this.stillInFacility == other.stillInFacility);
+        return (this.name.equals(other.name)
+                && this.ownerName.equals(other.ownerName)
+                && this.age == other.age
+                && this.dogId == other.dogId
+                && this.dogChar == other.dogChar
+                && this.dogTag.equals(other.dogTag)
+                && this.stillInFacility == other.stillInFacility);
     }
 
 }

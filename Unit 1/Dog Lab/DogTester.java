@@ -111,7 +111,6 @@ public class DogTester {
         System.out.println(PawesomeUtils.convertAgeToDogYears(24)); // 2
         System.out.println(PawesomeUtils.convertAgeToDogYears(39)); // 5
 
-
     }
 
 }
