@@ -27,8 +27,8 @@ public class PawesomeUtils {
         int d1 = dogId % 10;
         int d2 = (dogId / 10) % 10;
         int d3 = ((dogId / 10) / 10) % 10;
-        char returned_char = (char) ('F' + ((d1 + d2 + d3) % 10));
-        return returned_char;
+        char returnedChar = (char) ('F' + ((d1 + d2 + d3) % 10));
+        return returnedChar;
     }
 
     public static int validateDogId(int dogId) {
