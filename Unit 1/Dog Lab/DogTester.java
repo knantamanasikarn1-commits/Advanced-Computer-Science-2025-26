@@ -78,7 +78,7 @@ public class DogTester {
         System.out.println();
 
         // Test validateDogId() method
-        Dog invalidIdDog = new Dog("Bug", "Death", 666, 9999);
+        Dog invalidIdDog = new Dog("Bug", "Death", 666, 9999); // should change to valid
         Dog validIdDog = new Dog("Goodest Boy", "Good Guy", 7, 111);
         System.out.println(PawesomeUtils.validateDogId(invalidIdDog.getDogId())); // gets random
         System.out.println(PawesomeUtils.validateDogId(validIdDog.getDogId())); // still 111
