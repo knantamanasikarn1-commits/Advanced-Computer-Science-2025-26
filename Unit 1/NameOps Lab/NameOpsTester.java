@@ -48,38 +48,38 @@ public class NameOpsTester {
         System.out.println(test3); // Elvis
         System.out.println();
 
-        // // testing findLastName()
-        // System.out.println("== Testing findLastName() ==");
-        // method = "findLastName";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.findLastName(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.findLastName(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.findLastName(name3);
-        // System.out.println(test1); // 
-        // System.out.println(test2); // John
-        // System.out.println(test3); // Presley
-        // System.out.println();
+        // testing findLastName()
+        System.out.println("== Testing findLastName() ==");
+        method = "findLastName";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.findLastName(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.findLastName(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.findLastName(name3);
+        System.out.println(test1); // 
+        System.out.println(test2); // John
+        System.out.println(test3); // Presley
+        System.out.println();
 
-        // // testing findMiddleName()
-        // System.out.println("== Testing findMiddleName() ==");
-        // method = "findMiddleName";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.findMiddleName(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.findMiddleName(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.findMiddleName(name3);
-        // System.out.println(test1); //
-        // System.out.println(test2); //
-        // System.out.println(test3); // Aaron
-        // System.out.println();
+        // testing findMiddleName()
+        System.out.println("== Testing findMiddleName() ==");
+        method = "findMiddleName";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.findMiddleName(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.findMiddleName(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.findMiddleName(name3);
+        System.out.println(test1); //
+        System.out.println(test2); //
+        System.out.println(test3); // Aaron
+        System.out.println();
 
-        // // testing generateLastFirstMidInitial()
-        // System.out.println("== Testing generateLastFirstMidInitial() ==");
-        // method = "generateLastFirstMidInitial";
-        // test1 = NameOps.printMethodCall(method, name1) + NameOps.generateLastFirstMidInitial(name1);
-        // test2 = NameOps.printMethodCall(method, name2) + NameOps.generateLastFirstMidInitial(name2);
-        // test3 = NameOps.printMethodCall(method, name3) + NameOps.generateLastFirstMidInitial(name3);
-        // System.out.println(test1); // Cher
-        // System.out.println(test2); // John, Elton
-        // System.out.println(test3); // Presley, Elvis A.
-        // System.out.println();
+        // testing generateLastFirstMidInitial()
+        System.out.println("== Testing generateLastFirstMidInitial() ==");
+        method = "generateLastFirstMidInitial";
+        test1 = NameOps.printMethodCall(method, name1) + NameOps.generateLastFirstMidInitial(name1);
+        test2 = NameOps.printMethodCall(method, name2) + NameOps.generateLastFirstMidInitial(name2);
+        test3 = NameOps.printMethodCall(method, name3) + NameOps.generateLastFirstMidInitial(name3);
+        System.out.println(test1); // Cher
+        System.out.println(test2); // John, Elton
+        System.out.println(test3); // Presley, Elvis A.
+        System.out.println();
     }
 
 }
