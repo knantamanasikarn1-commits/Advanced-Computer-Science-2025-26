@@ -51,13 +51,13 @@ public class NameOps {
 
     public static String generateLastFirstMidInitial(String name) {
         if (findMiddleName(name) != "") {
-            return findLastName(name) + ", " + findFirstName(name) + " " + findMiddleName(name).charAt(0) + ".";
+            return findLastName(name) + ", " + findFirstName(name) + " "
+                + findMiddleName(name).charAt(0) + ".";
         }
         if (findLastName(name) != "") {
             return findLastName(name) + ", " + findFirstName(name);
         }
         return findFirstName(name);
-        
     }
 
 }
