@@ -5,10 +5,12 @@ public class PurrfectUtils {
         if (7 <= cat.getMoodLevel() && cat.getMoodLevel() <= 10) {
             returnedString += "is in a great mood."
                                 + "\nPetting is appreciated.";
+            return returnedString;
         }
         if (3 <= cat.getMoodLevel() && cat.getMoodLevel() <= 7) {
             returnedString += "is reminiscing of a past life."
                                 + "\nPetting is acceptable.";
+            return returnedString;
         }
         returnedString += "is plotting revengeance."
                             + "\nPetting is extremely risky.";
@@ -95,7 +97,7 @@ public class PurrfectUtils {
         cat.setMoodLevel(cat.getMoodLevel() + 2);
         cat.setHungry(false);
         String message = "Filling up " + cat.getName() + "'s bowl..."
-                            + "\nDone!\n" + cat.getName() + " is eating..."
+                            + "\nDone!\n" + cat.getName() + " is eating...\n"
                             + cat.getName() + " is full!";
         System.out.println(message);
     }
