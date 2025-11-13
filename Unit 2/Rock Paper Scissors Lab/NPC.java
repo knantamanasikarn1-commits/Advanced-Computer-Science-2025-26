@@ -12,7 +12,6 @@ public class NPC {
         }
     }
 
-
     public String getChoice() {
         return choice;
     }
