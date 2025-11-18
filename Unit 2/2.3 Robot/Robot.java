@@ -29,6 +29,7 @@ public class Robot {
             } else {
                 validatedHallway[i] = hallway[i];
             }
+            // validatedHallway[i] = Math.max(0, hallway[i]);
         }
         return validatedHallway;
     }
