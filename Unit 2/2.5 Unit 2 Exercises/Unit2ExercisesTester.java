@@ -20,6 +20,12 @@ public class Unit2ExercisesTester {
         System.out.println(Unit2Exercises.doubleChar("AAbb"));
         System.out.println(Unit2Exercises.doubleChar("Hi-There"));
         System.out.println();
-        System.out.println(Unit2Exercises.countHi(null));
+        System.out.println(Unit2Exercises.countHi("abc hi ho")); // 1
+        System.out.println(Unit2Exercises.countHi("ABChi hi")); // 2
+        System.out.println(Unit2Exercises.countHi("hihi")); // 2
+        System.out.println();
+        System.out.println(Unit2Exercises.haveThree(new int[] {3, 1, 3, 1, 3})); // true
+        System.out.println(Unit2Exercises.haveThree(new int[] {3, 1, 3, 3})); // false
+        System.out.println(Unit2Exercises.haveThree(new int[] {3, 4, 3, 3, 4})); // false
     }
 }

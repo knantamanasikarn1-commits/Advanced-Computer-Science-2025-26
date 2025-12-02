@@ -30,6 +30,9 @@ public class Unit2Exercises {
     }
 
     public static String fizzString(String str) {
+        if (str == null || str.length() == 0) {
+            return "";
+        }
         String returnedString = "";
         boolean returnOriginal = true;
         if (str.charAt(0) == 'f') {
@@ -89,9 +92,8 @@ public class Unit2Exercises {
 
     public static String mixString(String a, String b) {
         String returnedString = "";
-        boolean isALonger = (a.length() > b.length());
         int shorterLength;
-        if (isALonger) {
+        if (a.length() > b.length()) {
             shorterLength = b.length();
         } else {
             shorterLength = a.length();
@@ -100,7 +102,7 @@ public class Unit2Exercises {
             returnedString += a.charAt(i);
             returnedString += b.charAt(i);
         }
-        if (isALonger) {
+        if (a.length() > b.length()) {
             returnedString += a.substring(shorterLength);
         } else {
             returnedString += b.substring(shorterLength);
@@ -197,8 +199,9 @@ public class Unit2Exercises {
                 }
                 cannotBeThree = true;
                 threeCount += 1;
+            } else {
+                cannotBeThree = false;
             }
-            cannotBeThree = false;
         }
         return (threeCount == 3);
     }
@@ -282,9 +285,9 @@ public class Unit2Exercises {
     }
 
     public static int scoresSpecial(int[] a, int[] b) {
-        int aSpecial = getLargestSpecial(a);
-        int bSpecial = getLargestSpecial(b);
-        return aSpecial + bSpecial;
+        int specialA = getLargestSpecial(a);
+        int specialB = getLargestSpecial(b);
+        return specialA + specialB;
     }
 
     public static String firstTwo(String str) {
