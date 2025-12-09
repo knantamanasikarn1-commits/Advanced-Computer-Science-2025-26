@@ -77,7 +77,8 @@ public class TheaterMember {
     }
 
     public boolean equals(TheaterMember other) {
-        return (this.name.equals(other.name) && countLoyaltyCredits() == other.countLoyaltyCredits());
+        return (countLoyaltyCredits() == other.countLoyaltyCredits()
+                    && this.name.equals(other.name));
     }
 
 }
