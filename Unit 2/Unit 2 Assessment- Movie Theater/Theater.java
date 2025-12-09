@@ -11,6 +11,22 @@ public class Theater {
         this.theaterName = theaterName;
         this.registeredMembers = new TheaterMember[initialCapacity];
     }
+    
+    public String getTheaterName() {
+        return theaterName;
+    }
+
+    public void setTheaterName(String theaterName) {
+        this.theaterName = theaterName;
+    }
+
+    public TheaterMember[] getRegisteredMembers() {
+        return registeredMembers;
+    }
+
+    public void setRegisteredMembers(TheaterMember[] registeredMembers) {
+        this.registeredMembers = registeredMembers;
+    }
 
     public boolean isFull() {
         for (int i = 0; i < registeredMembers.length; i++) {
