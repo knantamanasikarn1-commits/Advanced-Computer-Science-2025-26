@@ -37,21 +37,17 @@ public class Theater {
         return true;
     }
 
-    private void increaseCapacityBy(int increase) {
-        TheaterMember[] newMembers = new TheaterMember[registeredMembers.length + increase];
+    public void increaseCapacity() {
+        TheaterMember[] newMembers = new TheaterMember[registeredMembers.length * 2];
         for (int i = 0; i < registeredMembers.length; i++) {
             newMembers[i] = registeredMembers[i];
         }
         this.registeredMembers = newMembers;
     }
 
-    public void increaseCapacity() {
-        increaseCapacityBy(registeredMembers.length);
-    }
-
     public void registerMember(TheaterMember member) {
         if (isFull()) {
-            increaseCapacityBy(1);
+            increaseCapacity();
             registeredMembers[registeredMembers.length - 1] = member;
         } else {
             for (int i = 0; i < registeredMembers.length; i++) {
