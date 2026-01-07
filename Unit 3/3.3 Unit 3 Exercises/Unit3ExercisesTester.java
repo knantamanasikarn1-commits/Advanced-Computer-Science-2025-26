@@ -12,6 +12,7 @@ public class Unit3ExercisesTester {
         testCalculateInterest();
     }
 
+    // #1
     public static void testCalculateStringLengthAverage() {
         // Test Case - Main Case
         String[] letters = { "abc", "cde", "efg", "hij" };
@@ -34,6 +35,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #2
     public static void testReverseString() {
          // Test Case - Main Case
         String testString = "abc";
@@ -58,6 +60,7 @@ public class Unit3ExercisesTester {
 
     }
 
+    // #3
     public static void testFindMaxValue() {
         // Test Case - Main Case (+ ints only)
         int[] testArray = {1, 2, 4, 3, 9};
@@ -81,6 +84,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #4
     public static void testIsPalindrome() {
         // Test Case - Main Case (actual palindrome)
         String testString = "racecar";
@@ -104,6 +108,7 @@ public class Unit3ExercisesTester {
         System.out.println("Expected true: " + Unit3Exercises.isPalindrome(testString));
     }
 
+    // #5
     public static void testSumEvenNumbers() {
         // Test Case - Main Case (+ even and odd nums)
         int[] testArray = {1, 4, 8, 2, 7};
@@ -127,6 +132,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #6
     public static void testCalculateSumOfSquares() {
         // Test Case - Main Case (integer array)
         int[] testArray = {1, 2, 3, -2};
@@ -142,6 +148,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #7
     public static void testGetNthFibonacci() {
         // Test Case - Main Case (positive int)
         int test = 10;
@@ -157,6 +164,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // HELPER METHOD FOR ARRAY PRINTING
     public static String getIntArrayString(int[] arr) {
         String returnedString = "[";
         for (int i = 0; i < arr.length; i++) {
@@ -170,6 +178,7 @@ public class Unit3ExercisesTester {
         return returnedString;
     }
 
+    // #8
     public static void testSortArrayDescending() {
         // Test Case - Main Case (unsorted array)
         int[] testArray = {5, 2, 7, 1, 3};
@@ -192,6 +201,7 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #9
     public static void testFindLongestWord() {
         // Test Case - Main Case (sentence with distinct longest length)
         String test = "pack my box with five dozen liquor jugs";
@@ -211,12 +221,19 @@ public class Unit3ExercisesTester {
         }
     }
 
+    // #10
     public static void testCalculateInterest() {
-        // Test Case - Main Case (appropriate inputs)
+        // Test Case - Main Case (Test 1, appropriate inputs)
         double principal = 1000.0;
         double rate = 12.5;
         int years = 2;
         System.out.println("Expected 1265.625: " + Unit3Exercises.calculateInterest(principal, rate, years));
+
+        // Test Case - Main Case (Test 2, appropriate inputs)
+        principal = 1000.0;
+        rate = 10.0;
+        years = 5;
+        System.out.println("Expected 1610.51: " + Unit3Exercises.calculateInterest(principal, rate, years));
 
         // Test Case - Edge Case (negative principal)
         try {
