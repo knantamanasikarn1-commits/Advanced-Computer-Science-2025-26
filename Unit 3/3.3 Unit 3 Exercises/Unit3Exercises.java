@@ -2,6 +2,10 @@ public class Unit3Exercises {
 
     // Intended: return the average length of the strings in the array.
     public static double calculateAverageStringLength(String[] strs) {
+        // Added exception
+        if (strs == null) {
+            throw new NullPointerException("INVALID (The String array is null)");
+        }
         // Initial sum should be at 0
         int sum = 0;
         int numTerms = strs.length;
@@ -22,6 +26,10 @@ public class Unit3Exercises {
 
     // Intended: produce a new string with the characters of the input reversed.
     public static String reverseString(String str) {
+        // Added exception
+        if (str == null) {
+            throw new NullPointerException("INVALID (The String is null)");
+        }
         String reversed = "";
 
         // Should actually go to i = 0, so >= instead of >
@@ -35,6 +43,10 @@ public class Unit3Exercises {
 
     // Finds largest int in an int[]
     public static int findMaxValue(int[] numbers) {
+        // Added exception
+        if (numbers == null) {
+            throw new NullPointerException("INVALID (numbers Array is null)");
+        }
         // Max should not be 0 (- nums), but start at first index
         int max = numbers[0];
         // Should change <= to < b/c no index of array length, max is one less
@@ -51,6 +63,10 @@ public class Unit3Exercises {
     // Intended: check whether the input string reads the same forwards and
     // backwards.
     public static boolean isPalindrome(String str) {
+        // Added exception
+        if (str == null) {
+            throw new NullPointerException("INVALID (str is null)");
+        }
         int left = 0;
         int right = str.length() - 1;
         // What this while loop is doing is checking for str NOT being a palindrome
@@ -70,6 +86,10 @@ public class Unit3Exercises {
 
     // Intended: sum only the even numbers in the array.
     public static int sumEvenNumbers(int[] numbers) {
+        // Added exception
+        if (numbers == null) {
+            throw new NullPointerException("INVALID (numbers is null)");
+        }
         int sum = 0;
         // Should go through all indices, not len - 1 (so just len)
         for (int i = 0; i < numbers.length; i++) {
@@ -81,6 +101,91 @@ public class Unit3Exercises {
         }
         // Do not need to set sum to array len???
         return sum;
+    }
+
+    public static int calculateSumOfSquares(int[] numbers) {
+        // Added exception
+        if (numbers == null) {
+            throw new NullPointerException("INVALID (numbers is null)");
+        }
+        int sum = 0;
+        // Starting index is i = 0, not i = 1
+        for (int i = 0; i < numbers.length; i++) {
+            sum += Math.pow(numbers[i], 2);
+        }
+        return sum;
+    }
+
+    public static int getNthFibonacci(int n) {
+        // Added exception
+        if (n <= 0) {
+            throw new IllegalArgumentException("INVALID (n was negative/0)");
+        }
+        // The second Fibonacci is also 1 (starts w/ 1, 1)
+        if (n <= 2) {
+            return 1;
+        }
+
+        // The initial (a, b) is (1, 1) not (0, 1)
+        int a = 1, b = 1, c;
+        // Should be up to n, not i <= n
+        for (int i = 2; i < n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
+    }
+
+    public static void sortArrayDescending(int[] arr) {
+        if (arr == null) {
+            throw new IllegalArgumentException("INVALID (arr is null)");
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                // Should be descending, not ascending, so change < to >
+                if (arr[j] > arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+
+    public static String findLongestWord(String sentence) {
+        // Added exception
+        if (sentence == null) {
+            throw new IllegalArgumentException("INVALID (sentence is null)");
+        }
+        String[] words = sentence.split(" ");
+        String longestWord = "";
+        for (int i = 0; i < words.length; i++) {
+            // Since equal lengths keep first, change >= to >
+            if (words[i].length() > longestWord.length()) {
+                longestWord = words[i];
+            }
+        }
+        return longestWord;
+    }
+
+    public static double calculateInterest(double principal, double rate, int years) {
+        // Added exceptions
+        if (principal < 0) {
+            throw new IllegalArgumentException("INVALID (principal is negative)");
+        }
+        if (rate < 0) {
+            throw new IllegalArgumentException("INVALID (rate is negative)");
+        }
+        if (years <= 0) {
+            throw new IllegalArgumentException("INVALID (years is not positive)");
+        }
+        // Interestingly (pun intended), could do:
+        // principal = principal * Math.pow((100 + rate) / 100, years);
+        for (int i = 0; i < years; i++) {
+            principal += principal * (rate / 100);
+        }
+        return principal;
     }
 
 }
