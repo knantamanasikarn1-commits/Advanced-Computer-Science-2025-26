@@ -1,5 +1,6 @@
 public class Unit3Exercises {
 
+    // #1
     // Intended: return the average length of the strings in the array.
     public static double calculateAverageStringLength(String[] strs) {
         // Added exception
@@ -24,6 +25,7 @@ public class Unit3Exercises {
         return sum / numTerms;
     }
 
+    // #2
     // Intended: produce a new string with the characters of the input reversed.
     public static String reverseString(String str) {
         // Added exception
@@ -41,6 +43,7 @@ public class Unit3Exercises {
         return reversed;
     }
 
+    // #3
     // Finds largest int in an int[]
     public static int findMaxValue(int[] numbers) {
         // Added exception
@@ -60,6 +63,7 @@ public class Unit3Exercises {
         return max;
     }
 
+    // #4
     // Intended: check whether the input string reads the same forwards and
     // backwards.
     public static boolean isPalindrome(String str) {
@@ -84,6 +88,7 @@ public class Unit3Exercises {
         return true;
     }
 
+    // #5
     // Intended: sum only the even numbers in the array.
     public static int sumEvenNumbers(int[] numbers) {
         // Added exception
@@ -103,6 +108,7 @@ public class Unit3Exercises {
         return sum;
     }
 
+    // #6
     public static int calculateSumOfSquares(int[] numbers) {
         // Added exception
         if (numbers == null) {
@@ -116,6 +122,7 @@ public class Unit3Exercises {
         return sum;
     }
 
+    // #7
     public static int getNthFibonacci(int n) {
         // Added exception
         if (n <= 0) {
@@ -137,6 +144,7 @@ public class Unit3Exercises {
         return b;
     }
 
+    // #8
     public static void sortArrayDescending(int[] arr) {
         if (arr == null) {
             throw new IllegalArgumentException("INVALID (arr is null)");
@@ -153,6 +161,7 @@ public class Unit3Exercises {
         }
     }
 
+    // #9
     public static String findLongestWord(String sentence) {
         // Added exception
         if (sentence == null) {
@@ -169,6 +178,7 @@ public class Unit3Exercises {
         return longestWord;
     }
 
+    // #10
     public static double calculateInterest(double principal, double rate, int years) {
         // Added exceptions
         if (principal < 0) {
@@ -186,6 +196,81 @@ public class Unit3Exercises {
             principal += principal * (rate / 100);
         }
         return principal;
+    }
+
+    // #11
+    public static int parsePositiveInteger(String str) {
+        // Added try-catch
+        try {
+            int number = Integer.parseInt(str);
+            // Added negative exception
+            if (number < 0) {
+                throw new NumberFormatException("INVALID: the number evaluated to a negative");
+            }
+            return number; // Method should return 1 if it's negative
+        } catch(Exception e) {
+            // Added error printing and default value returning
+            System.out.println(e.getMessage());
+            return 1;
+        }
+    }
+
+    // #12
+    public static String getArrayElement(String[] arr, int index) {
+        // Added try-catch
+        try {
+            return arr[index];
+        } catch(Exception e) {
+            // Add mesage and default return
+            System.out.println(e.getMessage());
+            System.out.println("The given index was out of bounds for the array");
+            return null;
+        }
+    }
+
+    // #13
+    public static double calculateSquareRoot(int number) {
+        // Added try-catch
+        try {
+            // Added negative exception
+            if (number < 0) {
+                throw new IllegalArgumentException("INVALID: a negative number cannot be rooted");
+            }
+            return Math.sqrt(number);
+        } catch(Exception e) {
+            // Print message and return defaults
+            System.out.println(e.getMessage());
+            return Double.NaN;
+        }
+    }
+
+    // #14
+    public static int sumArrayElements(int[] array) {
+        // Added try-catch, error message, and default return
+        try {
+            int sum = 0;
+            for (int i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            return sum;
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
+    }
+
+    // #15
+    public static double calculatePower(double base, int exponent) {
+        // Added try-catch, error catching, exception message printing, default value returning
+        try {
+            if (exponent < 0) {
+                throw new IllegalArgumentException("INVALID: this method cannot take in negative exponents");
+            }
+            return Math.pow(base, exponent);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            return 1;
+        }
     }
 
 }

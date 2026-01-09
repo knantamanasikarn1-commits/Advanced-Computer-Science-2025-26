@@ -9,7 +9,12 @@ public class Unit3ExercisesTester {
         // testGetNthFibonacci();
         // testSortArrayDescending();
         // testFindLongestWord();
-        testCalculateInterest();
+        // testCalculateInterest();
+        // testParsePositiveInteger();
+        // testGetArrayElement();
+        // testCalculateSquareRoot();
+        // testSumArrayElements();
+        testCalculatePower();
     }
 
     // #1
@@ -267,6 +272,63 @@ public class Unit3ExercisesTester {
             System.out.println(e.toString());
             System.out.println("The method threw an exception when years was non-positive, as intended");
         }
+    }
+
+    // #11
+    public static void testParsePositiveInteger() {
+        // Test Case - Main Case (eval to pos int)
+        String test = "5";
+        System.out.println("Expected 5: " + Unit3Exercises.parsePositiveInteger(test));
+        
+        // Test Case - Edge Case (eval to neg int)
+        test = "-4";
+        System.out.println("Expected 1 (default): " + Unit3Exercises.parsePositiveInteger(test));
+    }
+
+    // #12
+    public static void testGetArrayElement() {
+        // Test Case - Main Case (valid array and index)
+        String[] arr = {"kai", "ken", "you", "me"};
+        int index = 2;
+        System.out.println("Expected you: " + Unit3Exercises.getArrayElement(arr, index));
+
+        // Test Case - Edge Case (null array and index)
+        arr = null;
+        System.out.println("Expected null (default): " + Unit3Exercises.getArrayElement(arr, index));
+    }
+
+    // #13
+    public static void testCalculateSquareRoot() {
+        // Test Case - Main Case (postive num)
+        int test = 9;
+        System.out.println("Expected 3.0: " + Unit3Exercises.calculateSquareRoot(test));
+
+        // Test Case - Edge Case (negative num)
+        test = -25;
+        System.out.println("Expected Nan (default): " + Unit3Exercises.calculateSquareRoot(test));
+    }
+
+    // #14
+    public static void testSumArrayElements() {
+        // Test Case - Main Case (valid int array)
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println("Expected 15: " + Unit3Exercises.sumArrayElements(arr));
+
+        // Test Case - Edge Case (null array)
+        arr = null;
+        System.out.println("Expected 0 (default): " + Unit3Exercises.sumArrayElements(arr));
+    }
+
+    // #15
+    public static void testCalculatePower() {
+        // Test Case - Main Case (valid base and pos exp)
+        int base = 2;
+        int exponent = 10;
+        System.out.println("Expected 1024.0: " + Unit3Exercises.calculatePower(base, exponent));
+
+        // Test Case - Edge Case (valid base and neg exp)
+        exponent = -3;
+        System.out.println("Expected 1.0 (default): " + Unit3Exercises.calculatePower(base, exponent));
     }
 
 }
