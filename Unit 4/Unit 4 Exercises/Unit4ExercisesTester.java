@@ -93,6 +93,7 @@ public class Unit4ExercisesTester {
         testArray = new int[] {2, 2, 2};
         System.out.print("Expected [2, 2, 2]: ");
         System.out.println(printArray(Unit4Exercises.moveEvenBeforeOdd(testArray)));
+        System.out.println();
     }
 
 }
