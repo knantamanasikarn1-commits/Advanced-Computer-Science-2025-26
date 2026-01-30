@@ -25,16 +25,31 @@ public class ArrayVersusArrayList {
     // shifting all
     // other elements to the right.
     public static void lastComesFirst(String[] arr) {
-        // to-do: implement method
-
+        if (arr == null) {
+            throw new IllegalArgumentException("The array is null.");
+        }
+        if (arr.length <= 1) {
+            return;
+        }
+        String last = arr[arr.length - 1];
+        for (int i = arr.length - 1; i >= 1; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = last;
     }
 
     // modifies the given array by moving the last element to the first index, and
     // shifting all
     // other elements to the right.
     public static void lastComesFirst(ArrayList<String> arrList) {
-        // to-do: implement method
-
+        if (arrList == null) {
+            throw new IllegalArgumentException("The arraylist is null.");
+        }
+        if (arrList.size() <= 1) {
+            return;
+        }
+        String last = arrList.remove(arrList.size() - 1);
+        arrList.add(0, last);
     }
 
     // modifies the given array by moving the first element to the last index, and
@@ -42,15 +57,31 @@ public class ArrayVersusArrayList {
     // other elements to the left.
     public static void firstComesLast(String[] arr) {
         // to-do: implement method
-
+        if (arr == null) {
+            throw new IllegalArgumentException("The array is null.");
+        }
+        if (arr.length <= 1) {
+            return;
+        }
+        String first = arr[0];
+        for (int i = 0; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = first;
     }
 
     // modifies the given array by moving the first element to the last index, and
     // shifting all
     // other elements to the left.
     public static void firstComesLast(ArrayList<String> arrList) {
-        // to-do: implement method
-
+        if (arrList == null) {
+            throw new IllegalArgumentException("The arraylist is null.");
+        }
+        if (arrList.size() <= 1) {
+            return;
+        }
+        String first = arrList.remove(0);
+        arrList.add(first);
     }
 
     // Test Methods
