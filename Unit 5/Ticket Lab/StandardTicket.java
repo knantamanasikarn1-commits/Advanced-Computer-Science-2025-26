@@ -1,24 +1,17 @@
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Date;
 
 public class StandardTicket extends Ticket {
 
     public StandardTicket(Date eventDate, int ticketCount) {
-        super(eventDate, ticketCount);
+        super(eventDate, ticketCount, 0);
     }
 
-    public double getTotalPrice() {
-        return super.ticketCount * (super.getBasePrice() * (1 + super.getTax()));
+    public StandardTicket(Date eventDate, int ticketCount, double discount) {
+        super(eventDate, ticketCount, discount);
     }
 
     public void printTicketType() {
         System.out.println("Ticket Type: Standard");
-    }
-
-    public void printPrice() {
-        BigDecimal decimalFormatter = new BigDecimal(getTotalPrice()).setScale(2, RoundingMode.HALF_UP);
-        System.out.println("Ticket Price: $" + decimalFormatter.doubleValue());
     }
 
     @Override

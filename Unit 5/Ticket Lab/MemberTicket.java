@@ -5,15 +5,9 @@ import java.util.Date;
 public class MemberTicket extends Ticket {
 
     private static final double MEMBER_DISCOUNT = 0.25;
-    private double totalPrice;
 
     public MemberTicket(Date eventDate, int ticketCount) {
-        super(eventDate, ticketCount);
-        this.totalPrice = getTotalPrice();
-    }
-
-    public double getTotalPrice() {
-        return (1 - MEMBER_DISCOUNT) * super.ticketCount * (super.getBasePrice() * (1 + super.getTax()));
+        super(eventDate, ticketCount, MEMBER_DISCOUNT);
     }
 
     public void printMemberBenefits() {
@@ -25,7 +19,7 @@ public class MemberTicket extends Ticket {
     }
 
     public void printPrice() {
-        BigDecimal decimalFormatter = new BigDecimal(totalPrice).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal decimalFormatter = new BigDecimal(super.getTotalPrice()).setScale(2, RoundingMode.HALF_UP);
         System.out.println("Ticket Price: $" + decimalFormatter.doubleValue());
     }
 

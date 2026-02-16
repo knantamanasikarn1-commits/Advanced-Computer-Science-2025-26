@@ -5,11 +5,7 @@ public class StudentTicket extends StandardTicket {
     private static final double STUDENT_DISCOUNT = 0.50;
 
     public StudentTicket(Date eventDate, int ticketCount) {
-        super(eventDate, ticketCount);
-    }
-
-    public double getTotalPrice() {
-        return (1 - STUDENT_DISCOUNT) * super.getTotalPrice();
+        super(eventDate, ticketCount, STUDENT_DISCOUNT);
     }
 
     @Override
