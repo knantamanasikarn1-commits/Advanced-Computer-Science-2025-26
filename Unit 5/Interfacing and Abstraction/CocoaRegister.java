@@ -41,12 +41,12 @@ public class CocoaRegister {
         for (int i = 0; i < items.size(); i++) {
             int quantity = quantities.get(i);
             double basePrice = items.get(i).getBasePrice();
-            System.out.print((i + 1) + " " + items.get(i).getName() + " x" + quantity + " @ ");
+            System.out.print((i + 1) + ". " + items.get(i).getName() + " x" + quantity + " @ ");
             System.out.println("$" + ChocolateBar.money(basePrice) + " = $" + ChocolateBar.money(basePrice * quantity));
         }
-        System.out.println("Subtotal: $" + getSubtotal());
-        System.out.println("Tax: $" + getTax());
-        System.out.println("Total: $" + getTotal());
+        System.out.println("Subtotal: $" + ChocolateBar.money(getSubtotal()));
+        System.out.println("Tax: $" + ChocolateBar.money(getTax()));
+        System.out.println("Total: $" + ChocolateBar.money(getTotal()));
     }
 
 }

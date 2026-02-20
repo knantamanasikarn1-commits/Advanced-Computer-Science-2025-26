@@ -1,6 +1,6 @@
 
 // This item is NOT a ChocolateBar, but it IS Sellable.
-// That’s the point of the interface.
+// That's the point of the interface.
 class CocoaSticker implements Sellable {
 
     private static final double PRICE = 0.50;
@@ -17,7 +17,7 @@ class CocoaSticker implements Sellable {
 }
 
 // This item is NOT a ChocolateBar, but it IS Sellable.
-// That’s the point of the interface.
+// That's the point of the interface.
 class TShirt implements Sellable {
 
     private static final double PRICE = 25.00;
