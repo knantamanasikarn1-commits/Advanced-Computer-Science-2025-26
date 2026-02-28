@@ -1,5 +1,5 @@
 import java.awt.BasicStroke;
-// import java.awt.Color;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
@@ -7,8 +7,6 @@ public class Rectangle extends Shape {
     private int length;
     private int width;
 
-    
-    
     // Constructor that takes in 2 coordinates and the dimensions of the rectangle
     public Rectangle(int xCoord, int yCoord, int length, int width) {
         super(new int[]{xCoord}, new int[]{yCoord});
@@ -20,6 +18,19 @@ public class Rectangle extends Shape {
     // Constructor that takes in the dimensions of the rectangle, sets default coordinates to (0, 0)
     public Rectangle(int length, int width) {
         this(0, 0, length, width);
+    }
+
+    public Rectangle(int xCoord, int yCoord, int length, int width, Color fillColor) {
+        this(xCoord, yCoord, length, width);
+        super.fillColor = fillColor;
+    }
+
+    public Rectangle(int xCoord, int yCoord, int length, int width, Color fillColor, 
+        Color strokeColor, int strokeWidth) {
+            this(xCoord, yCoord, length, width);
+            super.fillColor = fillColor;
+            super.strokeColor = strokeColor;
+            super.strokeWidth = strokeWidth;
     }
 
     // Returns the area of the rectangle

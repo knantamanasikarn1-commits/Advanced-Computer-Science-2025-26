@@ -11,6 +11,19 @@ public class Triangle extends Shape {
         this(new int[] {0, 50, 100}, new int[] {0, 75, 50});
     }
 
+    public Triangle(int[] xCoords, int[] yCoords, Color fillColor) {
+        this(xCoords, yCoords);
+        super.fillColor = fillColor;
+    }
+
+    public Triangle(int[] xCoords, int[] yCoords, Color fillColor, 
+        Color strokeColor, int strokeWidth) {
+            this(xCoords, yCoords);
+            super.fillColor = fillColor;
+            super.strokeColor = strokeColor;
+            super.strokeWidth = strokeWidth;
+    }
+
     // get the area of the triangle using the 3 coordinates
     public double getArea() {
         return Math.abs((xCoord[0] * (yCoord[1] - yCoord[2]) + xCoord[1] * (yCoord[2] - yCoord[0]) + xCoord[2] * (yCoord[0] - yCoord[1])) / 2);

@@ -1,5 +1,5 @@
 import java.awt.BasicStroke;
-// import java.awt.Color;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
@@ -18,6 +18,19 @@ public class Oval extends Shape {
 
     public Oval(int xRadius, int yRadius){
         this(0, 0, xRadius, yRadius);
+    }
+
+    public Oval(int xCoord, int yCoord, int xRadius, int yRadius, Color fillColor) {
+        this(xCoord, yCoord, xRadius, yRadius);
+        super.fillColor = fillColor;
+    }
+
+    public Oval(int xCoord, int yCoord, int xRadius, int yRadius, Color fillColor, 
+        Color strokeColor, int strokeWidth) {
+            this(xCoord, yCoord, xRadius, yRadius);
+            super.fillColor = fillColor;
+            super.strokeColor = strokeColor;
+            super.strokeWidth = strokeWidth;
     }
 
     public double getArea(){
